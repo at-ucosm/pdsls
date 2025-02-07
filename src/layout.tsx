@@ -19,15 +19,16 @@ export const [theme, setTheme] = createSignal(
 );
 
 const Layout = (props: RouteSectionProps<unknown>) => {
-  try {
-    navigator.registerProtocolHandler("web+at", "/%s");
-    const pathname = decodeURIComponent(useLocation().pathname);
-    if (pathname.startsWith("/web+at://")) {
-      window.location.href = pathname.replace("web+at://", "at/");
-    }
-  } catch (err) {
-    console.error(err);
-  }
+  // removed for non-official constellation version:
+  // try {
+  //   navigator.registerProtocolHandler("web+at", "/%s");
+  //   const pathname = decodeURIComponent(useLocation().pathname);
+  //   if (pathname.startsWith("/web+at://")) {
+  //     window.location.href = pathname.replace("web+at://", "at/");
+  //   }
+  // } catch (err) {
+  //   console.error(err);
+  // }
   const params = useParams();
   const location = useLocation();
   onMount(async () => {
