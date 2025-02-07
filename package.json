@@ -6,6 +6,7 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "gh-pages": "vite build && cp docs/CNAME dist/ && rm -fr docs && mv dist docs",
     "serve": "vite preview"
   },
   "devDependencies": {
