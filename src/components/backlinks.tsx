@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { createSignal, createMemo, onMount } from "solid-js";
 import { getRecordBacklinks, getDidBacklinks } from "../utils/api.js";
 import { JSONValue } from "../components/json.jsx";
@@ -134,12 +135,12 @@ const BacklinkItems = ({ target, collection, path, dids, cursor }: {
       <Show when={dids}>
         <For each={links().linking_dids}>
           {(did) => (
-            <a
+            <A
               href={`/at/${did}`}
               class="w-full flex font-mono text-lightblue-500 hover:underline relative"
             >
               {did}
-            </a>
+            </A>
           )}
         </For>
       </Show>
@@ -147,18 +148,18 @@ const BacklinkItems = ({ target, collection, path, dids, cursor }: {
         <For each={links().linking_records}>
           {({ did, collection, rkey }) => (
             <p class="w-full flex font-mono relative gap-1">
-              <a
+              <A
                 href={`/at/${did}/${collection}/${rkey}`}
                 class="text-lightblue-500 hover:underline"
               >
                 {rkey}
-              </a>
-              <a
+              </A>
+              <A
                 href={`/at/${did}`}
                 class="text-lightblue-700 hover:underline"
               >
                 {did}
-              </a>
+              </A>
             </p>
           )}
         </For>

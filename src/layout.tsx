@@ -1,5 +1,5 @@
 import { createSignal, ErrorBoundary, onMount, Show, Suspense } from "solid-js";
-import { RouteSectionProps, useLocation, useParams } from "@solidjs/router";
+import { A, RouteSectionProps, useLocation, useParams } from "@solidjs/router";
 import { agent, loginState, retrieveSession } from "./components/login.jsx";
 import { CreateRecord } from "./components/create.jsx";
 import Tooltip from "./components/tooltip.jsx";
@@ -70,9 +70,9 @@ const Layout = (props: RouteSectionProps<unknown>) => {
           </Show>
         </div>
         <div class="basis-1/2 text-center font-mono text-xl font-bold">
-          <a href="/" class="hover:underline">
+          <A href="/" class="hover:underline">
             PDSls
-          </a>{" "}
+          </A>{" "}
           <a
             href="https://links.bsky.bad-example.com"
             class="hover:underline"

@@ -1,6 +1,6 @@
 import { createResource, createSignal, For, Show } from "solid-js";
 import { CredentialManager, XRPC } from "@atcute/client";
-import { query, useParams } from "@solidjs/router";
+import { A, query, useParams } from "@solidjs/router";
 import { resolveHandle, resolvePDS } from "../utils/api.js";
 
 const BlobView = () => {
@@ -42,13 +42,13 @@ const BlobView = () => {
         <div class="break-anywhere flex flex-col font-mono">
           <For each={blobs()}>
             {(cid) => (
-              <a
+              <A
                 href={`${pds}/xrpc/com.atproto.sync.getBlob?did=${did}&cid=${cid}`}
                 target="_blank"
                 class="hover:bg-neutral-300 dark:hover:bg-neutral-700"
               >
                 <span class="text-lightblue-500">{cid}</span>
-              </a>
+              </A>
             )}
           </For>
         </div>
